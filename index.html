@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>房贷计算器2023年 - 房贷计算在线工具</title>
+    <meta name="keywords" content="贷款计算器在线工具,LPR,公积金贷款计算器,房贷计算器2023,商贷计算器,loan,房贷利率计算器,等额本息计算器,等额本金计算器,提前还款房贷计算器,房贷计算器在线计算"/>
+    <meta name="description"
+          content="房贷计算器2023在线工具,提供2023房贷利率和房贷计算公式,包含购房贷款计算器、LPR、loan、等额本息计算器、房贷利率计算器、商贷计算器、公积金贷款计算器、提前还款计算器等"/>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,maximum-scale=5.0,minimum-scale=1.0,user-scalable=yes"/>
+    <link rel="icon" sizes="114x114" href="images/favicon.png">
+    <link rel="stylesheet" type="text/css" href="/css/my-common.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/my-houseloan.min.css"/>
+    <script type="text/javascript" src="/js/zepto.min.js" async></script>
+    <script type="text/javascript" src="/js/houseloan_calculator.js" async></script>
+    <script src="/js/common_tpl.js" type="text/javascript" async></script>
+
+    <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+    <script>LA.init({id:"3G9QRCtAm0z4ABfe",ck:"3G9QRCtAm0z4ABfe"})</script>
+
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "房贷计算器工具",
+          "applicationCategory": "FinanceApplication",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.3",
+            "ratingCount": "8864"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "0"
+          }
+        }
+    </script>
+</head>
+<body>
+<div class="header">
+    <div class="container">
+        <div class="logo">
+            <a href="/"><img src="/images/logo.png" style="width: 240px;height: 60px;" title="房贷计算器"></a>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="calculator">
+        <div view="calc_input" style="display:block;">
+            <div class="ui-bar" skin="title">
+                <at class="title">
+                    房贷计算器2023
+                    <div class="right">
+                        <a class="ui-btn" skin="blue mini i-home" href="/"></a>
+                    </div>
+                </at>
+            </div>
+            <nav class="switch-tabs big-switch-tabs">
+                <ul style="cursor: pointer;">
+                    <li id="business_calc" class="tab select-tab">
+                        <div>商业贷款计算器</div>
+                    </li>
+                    <li id="PAF_calc" class="tab normal-tab">
+                        <div>公积金贷款计算器</div>
+                    </li>
+                    <li id="mix_calc" class="tab normal-tab">
+                        <div>组合贷款计算器</div>
+                    </li>
+                </ul>
+            </nav>
+            <div class="input-fields" wrap="h10">
+                <ul>
+                    <li id="business_sum_line" class="field-wrap">
+                        <label>商业贷款</label>
+                        <div class="field">
+                            <div class="ui-text" data-tail="万元">
+                                <input type="number" id="business_sum" value="100"></div>
+                        </div>
+                    </li>
+                    <li id="PAF_sum_line" class="field-wrap" style="display:none">
+                        <label>公积金贷款</label>
+                        <div class="field">
+                            <div class="ui-text" data-tail="万元">
+                                <input type="number" id="PAF_sum" value="80"></div>
+                        </div>
+                    </li>
+                    <li class="field-wrap">
+                        <label>贷款期限</label>
+                        <div class="field">
+                            <div class="ui-select">
+                                <div class="value-bar">
+                                    <span id="loan_period_select_bar" class="text" value="20">20年（240期）</span>
+                                    <span class="icon-sps tail-icon"></span>
+                                </div>
+                                <select id="loan_period_select">
+                                    <option value="0">半年（6期）</option>
+                                    <option value="1">1年（12期）</option>
+                                    <option value="2">2年（24期）</option>
+                                    <option value="3">3年（36期）</option>
+                                    <option value="4">4年（48期）</option>
+                                    <option value="5">5年（60期）</option>
+                                    <option value="6">6年（72期）</option>
+                                    <option value="7">7年（84期）</option>
+                                    <option value="8">8年（96期）</option>
+                                    <option value="9">9年（108期）</option>
+                                    <option value="10">10年（120期）</option>
+                                    <option value="11">11年（132期）</option>
+                                    <option value="12">12年（144期）</option>
+                                    <option value="13">13年（156期）</option>
+                                    <option value="14">14年（168期）</option>
+                                    <option value="15">15年（180期）</option>
+                                    <option value="16">16年（192期）</option>
+                                    <option value="17">17年（204期）</option>
+                                    <option value="18">18年（216期）</option>
+                                    <option value="19">19年（228期）</option>
+                                    <option value="20" selected="selected">20年（240期）</option>
+                                    <option value="21">21年（252期）</option>
+                                    <option value="22">22年（264期）</option>
+                                    <option value="23">23年（276期）</option>
+                                    <option value="24">24年（288期）</option>
+                                    <option value="25">25年（300期）</option>
+                                    <option value="26">26年（312期）</option>
+                                    <option value="27">27年（324期）</option>
+                                    <option value="28">28年（336期）</option>
+                                    <option value="29">29年（348期）</option>
+                                    <option value="30">30年（360期）</option>
+                                </select>
+                            </div>
+                        </div>
+                    </li>
+                    <li id="business_rate_select_line" class="field-wrap">
+                        <label>商贷利率</label>
+                        <div class="field long-field" id="business_rate_select_field">
+                            <div class="ui-select">
+                                <div class="value-bar">
+                                    <span id="business_rate_select_bar" class="text" value="12">最新基准利率</span>
+                                    <span class="icon-sps tail-icon"></span>
+                                </div>
+                                <select id="business_rate_select" input-method="auto">
+                                    <option value="-1">手动输入</option>
+                                    <option value="12" data-key="18-1-1" selected="selected">最新基准利率</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="field short-field" id="business_discount_field">
+                            <div class="ui-select">
+                                <div class="value-bar">
+                                    <span id="business_discount_bar" class="text" data-discount="1.0">无折扣</span>
+                                    <span class="icon-sps tail-icon"></span>
+                                </div>
+                                <select id="business_discount">
+                                    <option value="0" data-discount="1.0" selected="selected">无折扣</option>
+                                    <option value="10" data-discount="1.2">1.2倍</option>
+                                    <option value="9" data-discount="1.15">1.15倍</option>
+                                    <option value="8" data-discount="1.1">1.1倍</option>
+                                    <option value="7" data-discount="1.05">1.05倍</option>
+                                    <option value="6" data-discount="0.95">95折</option>
+                                    <option value="5" data-discount="0.9">9折</option>
+                                    <option value="4" data-discount="0.85">85折</option>
+                                    <option value="3" data-discount="0.8">8折</option>
+                                    <option value="2" data-discount="0.75">75折</option>
+                                    <option value="1" data-discount="0.7">7折</option>
+                                </select>
+                            </div>
+                        </div>
+                    </li>
+                    <li id="business_rate_value_line" class="field-wrap">
+                        <label></label>
+                        <div class="field">
+                            <div class="ui-text rate-text" data-tail="%">
+                                <input type="number" id="business_rate" value="4.2"></div>
+                        </div>
+                    </li>
+                    <li id="PAF_rate_line" class="field-wrap" style="display:none">
+                        <label>公积金利率</label>
+                        <div class="field long-field">
+                            <div class="ui-select">
+                                <div class="value-bar">
+                                    <span id="PAF_rate_select_bar" class="text" value="12">最新基准利率</span>
+                                    <span class="icon-sps tail-icon"></span>
+                                </div>
+                                <select id="PAF_rate_select" input-method="auto">
+                                    <option value="-1">手动输入</option>
+                                    <option value="12" data-key="18-1-1" selected="selected">最新基准利率</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="field short-field">
+                            <div class="ui-text" data-tail="%">
+                                <input type="number" id="PAF_rate" value="3.25"></div>
+                        </div>
+                    </li>
+                    <li class="field-wrap">
+                        <label>还款方式</label>
+                        <div class="field mid-field">
+                            <label class="repay-method">
+                                <input type="radio" name="repayType" id="repay_radio1" value="1" checked="checked">&nbsp;等额本息</label>
+                        </div>
+                        <div class="field mid-field">
+                            <label class="repay-method">
+                                <input type="radio" name="repayType" id="repay_radio2" value="2">&nbsp;等额本金</label>
+                        </div>
+                    </li>
+                </ul>
+                <div class="calbtn-wrap">
+                    <a id="calculate" class="ui-btn" skin="blue full">计&nbsp;算</a>
+                </div>
+            </div>
+            <div wrap="t15">
+                <div class="use-help">
+                    <p>
+                        买房是人生中的大事，选择合适的房贷是关键。房贷计算器官网开发的房贷计算器2023是一款非常受欢迎的工具，每天超过88万人使用它来计算和咨询房屋贷款，包括提前还款计算器和公积金贷款计算器。无论您是想要了解房贷利率、首付比例、贷款期限等，房贷计算器都能为您提供详细的数据和计算结果。此外，如果您在线咨询贷款时遇到任何问题或疑虑，也可以使用贷款计算器进行详细咨询和了解。总之，选择合适的房贷产品，根据自己的实际情况选择最合适的还款方式，合理规划自己的财务，是买房前必须要做的一项重要准备工作。                    </p>
+                </div>
+                <div id="business_atc_recmd_mod" style="display:block;">
+                    <div>
+                        <div class="mod-tit" wrap="h15 b10">
+                            <p>房贷知识</p>
+                        </div>
+                        <div class="ui-list">
+                            <a class="list-item" href="/post/1.html">
+                                <div class="detail" doc="desc">
+                                    <p class="atc-title">买房按揭办不下来能退首付吗？</p>
+                                </div>
+                                <i data-icon="&gt;"></i>
+                            </a>
+                            <a class="list-item" href="/post/2.html">
+                                <div class="detail" doc="desc">
+                                    <p class="atc-title">还房贷，等额本金和等额本息哪个好？</p>
+                                </div>
+                                <i data-icon="&gt;"></i>
+                            </a>
+                            <a class="list-item" href="/post/3.html">
+                                <div class="detail" doc="desc">
+                                    <p class="atc-title">公积金贷款计算器告诉你公积金和住房补贴有什么不同</p>
+                                </div>
+                                <i data-icon="&gt;"></i>
+                            </a>
+                            <a class="list-item" href="/post/4.html">
+                                <div class="detail" doc="desc">
+                                    <p class="atc-title">房贷还不上怎么办？</p>
+                                </div>
+                                <i data-icon="&gt;"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div id="PAF_atc_recmd_mod" class="hide">
+                    <div>
+                        <div class="mod-tit" wrap="h15 b10">
+                            <p>房贷知识</p>
+                        </div>
+                        <div class="ui-list">
+                            <a class="list-item" href="/post/1.html">
+                                <div class="detail" doc="desc">
+                                    <p class="atc-title">买房按揭办不下来能退首付吗？</p>
+                                </div>
+                                <i data-icon="&gt;"></i>
+                            </a>
+                            <a class="list-item" href="/post/2.html">
+                                <div class="detail" doc="desc">
+                                    <p class="atc-title">还房贷，等额本金和等额本息哪个好？</p>
+                                </div>
+                                <i data-icon="&gt;"></i>
+                            </a>
+                            <a class="list-item" href="/post/3.html">
+                                <div class="detail" doc="desc">
+                                    <p class="atc-title">公积金贷款计算器告诉你公积金和住房补贴有什么不同</p>
+                                </div>
+                                <i data-icon="&gt;"></i>
+                            </a>
+                            <a class="list-item" href="/post/4.html">
+                                <div class="detail" doc="desc">
+                                    <p class="atc-title">房贷还不上怎么办？</p>
+                                </div>
+                                <i data-icon="&gt;"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="calc-result hide" view="calc_result">
+            <header class="ui-bar" skin="title">
+                <h1 class="title">计算结果</h1>
+                <div class="left">
+                    <a id="back_to_calc_input" class="ui-btn" skin="mini back" wrap="t5">返回</a>
+                </div>
+            </header>
+            <nav class="switch-tabs">
+                <ul>
+                    <li id="result_tab_1" class="result-tab normal-tab" tab-id="1">
+                        <a href="javascript:void(0)">等额本息</a>
+                    </li>
+                    <li id="result_tab_2" class="result-tab normal-tab" tab-id="2">
+                        <a href="javascript:void(0)">等额本金</a>
+                    </li>
+                </ul>
+            </nav>
+            <div id="result_data_1" class="result-data hide">
+                <ul class="result-list">
+                    <li class="group-tit">还款数据摘要</li>
+                    <li id="business_interest_total_debx" class="hide">
+                        <div class="item-name">商贷利息</div>
+                        <div id="business_interest_total_1" class="item-value"></div>
+                    </li>
+                    <li id="PAF_interest_total_debx" class="hide">
+                        <div class="item-name">公积金利息</div>
+                        <div id="PAF_interest_total_1" class="item-value"></div>
+                    </li>
+                    <li>
+                        <div class="item-name">利息总额</div>
+                        <div id="interest_total_1" class="item-value"></div>
+                    </li>
+                    <li>
+                        <div class="item-name">累计还款总额</div>
+                        <div id="repay_total_1" class="item-value"></div>
+                    </li>
+                    <li>
+                        <div class="item-name">每月月供</div>
+                        <div id="repay_monthly_1" class="item-value"></div>
+                    </li>
+                    <li>
+                        <div class="item-name">最高月付利息</div>
+                        <div id="interest_monthly_1" class="item-value"></div>
+                    </li>
+                </ul>
+                <div class="data-container wid2 clear">
+                    <div class="group-tit">还款数据明细</div>
+                    <table class="data-table table-striped">
+                        <thead>
+                        <tr>
+                            <th>期次</th>
+                            <th>偿还本息</th>
+                            <th>偿还利息</th>
+                            <th>偿还本金</th>
+                            <th>剩余本金</th>
+                        </tr>
+                        </thead>
+                        <tbody id="simple_data_table_1"></tbody>
+                    </table>
+                    <div class="view-more" data-detail="1">
+                        <div class="detail">
+                            <p class="txt">查看更多数据...</p>
+                        </div>
+                        <i data-icon="&gt;"></i>
+                    </div>
+                </div>
+            </div>
+            <div id="result_data_2" class="result-data hide">
+                <ul class="result-list">
+                    <li class="group-tit">还款数据摘要</li>
+                    <li id="business_interest_total_debj" class="hide">
+                        <div class="item-name">商贷利息</div>
+                        <div id="business_interest_total_2" class="item-value"></div>
+                    </li>
+                    <li id="PAF_interest_total_debj" class="hide">
+                        <div class="item-name">公积金利息</div>
+                        <div id="PAF_interest_total_2" class="item-value"></div>
+                    </li>
+                    <li>
+                        <div class="item-name">利息总额</div>
+                        <div id="interest_total_2" class="item-value"></div>
+                    </li>
+                    <li>
+                        <div class="item-name">累计还款总额</div>
+                        <div id="repay_total_2" class="item-value"></div>
+                    </li>
+                    <li>
+                        <div class="item-name">最高月供</div>
+                        <div id="repay_monthly_2" class="item-value"></div>
+                    </li>
+                    <li>
+                        <div class="item-name">最高月付利息</div>
+                        <div id="interest_monthly_2" class="item-value"></div>
+                    </li>
+                </ul>
+                <div class="data-container wid2 clear">
+                    <div class="group-tit">还款数据明细</div>
+                    <table class="data-table table-striped">
+                        <thead>
+                        <tr>
+                            <th>期次</th>
+                            <th>偿还本息</th>
+                            <th>偿还利息</th>
+                            <th>偿还本金</th>
+                            <th>剩余本金</th>
+                        </tr>
+                        </thead>
+                        <tbody id="simple_data_table_2"></tbody>
+                    </table>
+                    <div class="view-more" data-detail="2">
+                        <div class="detail">
+                            <p class="txt">查看更多数据...</p>
+                        </div>
+                        <i data-icon="&gt;"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="recal-btn" wrap="h10">
+                <a id="recalculate" class="ui-btn" skin="blue full">重新计算</a>
+            </div>
+            <div wrap="t15">
+                <div class="use-help">
+                    <p>
+                        2023买房计算月供当然是用房贷计算器官网开发的房贷计算器最新2023,每天超过1611万人在线计算和咨询房屋贷款,包括提前还款计算器和公积金贷款计算器.房贷计算,就用贷款计算器最新2023、房贷计算器2023、公积金贷款计算器。</p>
+                </div>
+                <div id="repay_atc_recmd_mod">
+                    <div>
+                        <div class="mod-tit" wrap="h15 b10">
+                            <p>房贷常识</p>
+                        </div>
+                        <div class="ui-list">
+                            <a class="list-item" href="/post/1.html">
+                                <div class="detail" doc="desc">
+                                    <p class="atc-title">买房按揭办不下来能退首付吗？</p>
+                                </div>
+                                <i data-icon="&gt;"></i>
+                            </a>
+                            <a class="list-item" href="/post/2.html">
+                                <div class="detail" doc="desc">
+                                    <p class="atc-title">还房贷，等额本金和等额本息哪个好？</p>
+                                </div>
+                                <i data-icon="&gt;"></i>
+                            </a>
+                            <a class="list-item" href="/post/3.html">
+                                <div class="detail" doc="desc">
+                                    <p class="atc-title">公积金贷款计算器告诉你公积金和住房补贴有什么不同</p>
+                                </div>
+                                <i data-icon="&gt;"></i>
+                            </a>
+                            <a class="list-item" href="/post/4.html">
+                                <div class="detail" doc="desc">
+                                    <p class="atc-title">房贷还不上怎么办？</p>
+                                </div>
+                                <i data-icon="&gt;"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="data_detail_bar" class="ui-bar-fixed hide">
+            <header class="ui-bar" skin="title">
+                <h1 class="title">数据明细</h1>
+                <div class="left">
+                    <a id="back_to_calc_result" class="ui-btn" skin="mini back" wrap="t5">返回</a>
+                </div>
+            </header>
+        </div>
+        <div class="data-detail hide" view="data_detail">
+            <div id="data_detail_1" class="data-container wid2 clear hide">
+                <table class="data-table table-striped">
+                    <thead>
+                    <tr>
+                        <th>期次</th>
+                        <th>偿还本息</th>
+                        <th>偿还利息</th>
+                        <th>偿还本金</th>
+                        <th>剩余本金</th>
+                    </tr>
+                    </thead>
+                    <tbody id="standard_data_table_1"></tbody>
+                </table>
+            </div>
+            <div id="data_detail_2" class="data-container wid2 clear hide">
+                <table class="data-table table-striped">
+                    <thead>
+                    <tr>
+                        <th>期次</th>
+                        <th>偿还本息</th>
+                        <th>偿还利息</th>
+                        <th>偿还本金</th>
+                        <th>剩余本金</th>
+                    </tr>
+                    </thead>
+                    <tbody id="standard_data_table_2"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="side">
+        <h3 class="title">房贷常识</h3>
+        <div class="ui-list">
+            <a class="list-item" href="/post/1.html">
+                <div class="detail" doc="desc">
+                    <p class="atc-title">买房按揭办不下来能退首付吗？</p>
+                </div>
+                <i data-icon="&gt;"></i>
+            </a>
+            <a class="list-item" href="/post/2.html">
+                <div class="detail" doc="desc">
+                    <p class="atc-title">还房贷，等额本金和等额本息哪个好？</p>
+                </div>
+                <i data-icon="&gt;"></i>
+            </a>
+            <a class="list-item" href="/post/3.html">
+                <div class="detail" doc="desc">
+                    <p class="atc-title">公积金贷款计算器告诉你公积金和住房补贴有什么不同</p>
+                </div>
+                <i data-icon="&gt;"></i>
+            </a>
+            <a class="list-item" href="/post/4.html">
+                <div class="detail" doc="desc">
+                    <p class="atc-title">房贷还不上怎么办？</p>
+                </div>
+                <i data-icon="&gt;"></i>
+            </a>
+        </div>
+
+        <h3 class="title">友情链接</h3>
+        <div class="links">
+            <a href="https://www.sina.com/" target="_blank">新浪财经</a>
+            <a href="https://anjuke.com" target="_blank">安居客</a>
+            <a href="https://tool.gitapp.cn/" target="_blank">在线工具集</a>
+            <a href="https://ps.gitapp.cn/" target="_blank">在线ps</a>
+        </div>
+    </div>
+
+</div>
+<div class="footer">
+    &copy; copyright by <a href="/">房贷计算器2023</a>
+    <script>
+    </script>
+</div>
+</body>
+</html>
