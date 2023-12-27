@@ -8,3 +8,8 @@
 ## 代码结构
 
 整个项目代码分为css、js、image和index.html ，总的来说，代码结构比较简单，容易理解。主入口文件就是index.html，感兴趣的同学可以下载代码学习。
+
+## 效果参考
+
+- [fangdai-eyg](https://fangdai-eyg.pages.dev/)
+- [计算器-vercel](https://fangdai.vercel.app/)
